@@ -1,16 +1,4 @@
 # sorting_visualizer
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="700" alt="Screen Shot 2023-01-10 at 6 23 06 PM" src="https://user-images.githubusercontent.com/97303474/211897554-6429377f-d31f-473b-8891-2aab49bf20b8.png">
+https://user-images.githubusercontent.com/97303474/211898899-a79ebdc5-a5d7-4db4-a984-02989a29b181.mov
