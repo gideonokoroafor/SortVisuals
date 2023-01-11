@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:sorting_visualizer/SortScreen.dart';
+import 'package:sorting_visualizer/sort_screen.dart';
 
 void main() {
   runApp(const MyApp());
