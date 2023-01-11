@@ -1,6 +1,6 @@
 # sorting_visualizer
 
-<img width="700" alt="Screen Shot 2023-01-10 at 6 23 06 PM" src="https://user-images.githubusercontent.com/97303474/211897554-6429377f-d31f-473b-8891-2aab49bf20b8.png">
+<!-- <img width="700" alt="Screen Shot 2023-01-10 at 6 23 06 PM" src="https://user-images.githubusercontent.com/97303474/211897554-6429377f-d31f-473b-8891-2aab49bf20b8.png"> -->
 
 <img src="[https://media.github.umn.edu/user/23409/files/657b23f2-2d48-40a7-99a8-c701f8aa07a9](https://user-images.githubusercontent.com/97303474/211897554-6429377f-d31f-473b-8891-2aab49bf20b8.png)" width="200"/> 
 
