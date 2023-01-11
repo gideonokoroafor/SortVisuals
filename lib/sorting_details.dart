@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sorting_visualizer/constants.dart';
+import 'package:sorting_visualizer/utils/constants.dart';
+import 'package:sorting_visualizer/utils/details.dart';
 
 class SortingDetails extends StatelessWidget {
   final int algoType;
@@ -21,6 +21,14 @@ class SortingDetails extends StatelessWidget {
         return getBubbleSort();
       case 2:
         return getInsertionSort();
+      case 3:
+        return getSelectionSort();
+      case 4:
+        return getMergeSort();
+      case 5:
+        return getHeapSort();
+      case 6:
+        return getGnomeSort();
       default:
         break;
     }
@@ -28,275 +36,80 @@ class SortingDetails extends StatelessWidget {
   }
 
   Widget getBubbleSort() {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              'Bubble Sort',
-              style: GoogleFonts.bebasNeue(fontSize: 30, color: Colors.white),
-              textAlign: TextAlign.left,
-            ),
-            Text(
-              bubbleSortDet,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.left,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Time Complexity: ',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Text(
-                  'Space Complexity:',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Average Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Best Case: O(n)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(1)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            TextButton(
-              child: Text(
-                'View code',
-                style: GoogleFonts.benchNine(fontSize: 20, color: Colors.blue),
-              ),
-              onPressed: () {},
-            ),
-          ]),
-        ),
-      ),
-    );
+    return Details(
+        name: 'Bubble Sort',
+        description: bubbleSortDet,
+        tWorstCase: bubbleWorseCase,
+        tAverageCase: bubbleAvgCase,
+        tBestCase: bubbleBestCase,
+        spaceComplexity: bubbleSpaceCase,
+        onTap: () {});
   }
 
   Widget getQuickSort() {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              'Quick Sort',
-              style: GoogleFonts.bebasNeue(fontSize: 30, color: Colors.white),
-              textAlign: TextAlign.left,
-            ),
-            Text(
-              bubbleSortDet,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.left,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Time Complexity: ',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Text(
-                  'Space Complexity:',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Average Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Best Case: O(n)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(1)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            TextButton(
-              child: Text(
-                'View code',
-                style: GoogleFonts.benchNine(fontSize: 20, color: Colors.blue),
-              ),
-              onPressed: () {},
-            ),
-          ]),
-        ),
-      ),
-    );
+    return Details(
+        name: 'Quick Sort',
+        description: quickSortDet,
+        tWorstCase: quickWorseCase,
+        tAverageCase: quickAvgCase,
+        tBestCase: quickBestCase,
+        spaceComplexity: quickSpaceCase,
+        onTap: () {});
   }
 
   Widget getInsertionSort() {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              'Bubble Sort',
-              style: GoogleFonts.bebasNeue(fontSize: 30, color: Colors.white),
-              textAlign: TextAlign.left,
-            ),
-            Text(
-              bubbleSortDet,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.left,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Time Complexity: ',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Text(
-                  'Space Complexity:',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 18, color: Colors.white),
-                  // textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Average Case: O(n²)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'Best Case: O(n)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 80,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'Worst Case: O(1)',
-                      style: GoogleFonts.benchNine(
-                          fontSize: 18, color: Colors.white),
-                      // textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            TextButton(
-              child: Text(
-                'View code',
-                style: GoogleFonts.benchNine(fontSize: 20, color: Colors.blue),
-              ),
-              onPressed: () {},
-            ),
-          ]),
-        ),
-      ),
-    );
+    return Details(
+        name: 'Insertion Sort',
+        description: insertSortDet,
+        tWorstCase: insertWorseCase,
+        tAverageCase: insertAvgCase,
+        tBestCase: insertBestCase,
+        spaceComplexity: insertSpaceCase,
+        onTap: () {});
   }
+
+  Widget getSelectionSort() {
+    return Details(
+        name: 'Select Sort',
+        description: selectionSortDet,
+        tWorstCase: selectWorseCase,
+        tAverageCase: selectAvgCase,
+        tBestCase: selectBestCase,
+        spaceComplexity: selectSpaceCase,
+        onTap: () {});
+  }
+
+  Widget getMergeSort() {
+    return Details(
+        name: 'Merge Sort',
+        description: mergeSortDet,
+        tWorstCase: mergeWorseCase,
+        tAverageCase: mergeAvgCase,
+        tBestCase: mergeBestCase,
+        spaceComplexity: mergeSpaceCase,
+        onTap: () {});
+  }
+
+  Widget getHeapSort() {
+    return Details(
+        name: 'Heap Sort',
+        description: heapSortDet,
+        tWorstCase: heapWorseCase,
+        tAverageCase: heapAvgCase,
+        tBestCase: heapBestCase,
+        spaceComplexity: heapSpaceCase,
+        onTap: () {});
+  }
+
+  Widget getGnomeSort() {
+    return Details(
+        name: 'Gnome Sort',
+        description: gnomeSortDet,
+        tWorstCase: gnomeWorseCase,
+        tAverageCase: gnomeAvgCase,
+        tBestCase: gnomeBestCase,
+        spaceComplexity: gnomeSpaceCase,
+        onTap: () {});
+  }
+
 }
