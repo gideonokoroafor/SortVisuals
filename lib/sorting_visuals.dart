@@ -83,31 +83,26 @@ class VisualizerProvider with ChangeNotifier {
       case 1:
         mDuration = const Duration(microseconds: 1000);
         await _bubbleSort();
-        // await _selectionSortVisualiser();
         break;
       case 2:
-        mDuration = const Duration(microseconds: 300);
+        mDuration = const Duration(microseconds: 200); //300
         await _insertionSortVisualiser();
         break;
       case 3:
         mDuration = const Duration(microseconds: 1000);
         await _selectionSortVisualiser();
-        // await _mergeSortVisualiser(arrayOfBars, 0, arrayOfBars.length - 1);
         break;
       case 4:
         mDuration = const Duration(microseconds: 1000);
         await _mergeSortVisualiser(arrayOfBars, 0, arrayOfBars.length - 1);
-        // await _heapSortVisualiser(arrayOfBars);
         break;
       case 5:
         mDuration = const Duration(microseconds: 1000);
         await _heapSortVisualiser(arrayOfBars);
-        // await _gnomeSortVisualiser();
         break;
       case 6:
         mDuration = const Duration(microseconds: 1000);
         await _gnomeSortVisualiser();
-        // await _bubbleSort();
         break;
     }
   }
@@ -183,16 +178,9 @@ class VisualizerProvider with ChangeNotifier {
     for (int i = 1; i < arrayOfBars.length; i++) {
       key = arrayOfBars[i];
       j = i - 1;
-
-      print("print.....");
-
       while (j >= 0 && arrayOfBars[j] > key) {
-        print("print.....2 $isRunning");
-
         if (!isRunning) return;
-
         await Future.delayed(mDuration, () {
-          print("print.....3");
           arrayOfBars[j + 1] = arrayOfBars[j];
           notifyListeners();
         });
@@ -201,11 +189,9 @@ class VisualizerProvider with ChangeNotifier {
       }
 
       await Future.delayed(mDuration, () {
-        print("print.....4");
         arrayOfBars[j + 1] = key;
       });
     }
-
     isRunning = false;
     notifyListeners();
   }
@@ -214,7 +200,6 @@ class VisualizerProvider with ChangeNotifier {
   _mergeSortVisualiser(List<int> mergeArr, int low, int high) async {
     if (low < high) {
       if (!isRunning) return;
-
       int mid = (low + (high - low) / 2).toInt();
       await _mergeSortVisualiser(mergeArr, low, mid);
       await _mergeSortVisualiser(mergeArr, mid + 1, high);
