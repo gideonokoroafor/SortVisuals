@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:sorting_visualizer/utils/constants.dart';
 import 'package:sorting_visualizer/sorting_details.dart';
